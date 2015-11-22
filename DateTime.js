@@ -254,6 +254,11 @@ var Datetime = React.createClass({
 		this.setState({ open: true });
 	},
 
+	closeCalendar: function() {
+		this.setState({ open: false });
+		this.props.onBlur( this.state.selectedDate || this.state.inputValue );
+	},
+
 	handleClickOutside: function(){
 		if( this.props.input && this.state.open && !this.props.open ){
 			this.setState({ open: false });
